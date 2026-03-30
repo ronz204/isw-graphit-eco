@@ -1,0 +1,7 @@
+```bash
+# set default preset
+cmake --preset default
+
+# compile project
+cmake --build ./build
+```
