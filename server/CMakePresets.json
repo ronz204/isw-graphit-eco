@@ -8,8 +8,11 @@
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
+        "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
+        "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic",
         "CMAKE_CXX_COMPILER": "$env{USERPROFILE}/scoop/apps/mingw/current/bin/g++.exe",
-        "CMAKE_MAKE_PROGRAM": "$env{USERPROFILE}/scoop/apps/mingw/current/bin/mingw32-make.exe"
+        "CMAKE_MAKE_PROGRAM": "$env{USERPROFILE}/scoop/apps/mingw/current/bin/mingw32-make.exe",
+        "CMAKE_TOOLCHAIN_FILE": "$env{USERPROFILE}/scoop/apps/vcpkg/current/scripts/buildsystems/vcpkg.cmake"
       }
     }
   ],

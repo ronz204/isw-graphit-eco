@@ -1,0 +1,9 @@
+{
+  "name": "happy-gr4",
+  "version": "1.0.0",
+  "dependencies": [
+    "crow",
+    "boost-asio",
+    "nlohmann-json"
+  ]
+}
