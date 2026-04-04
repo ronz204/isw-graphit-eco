@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
   resolve: { alias: {
+    "@shared": "/src/shared",
     "@features": "/src/features",
     "@components": "/src/components",
   }},
