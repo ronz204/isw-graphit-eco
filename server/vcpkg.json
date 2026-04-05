@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "dependencies": [
     "crow",
+    "sqlite3",
+    "sqlite-orm",
     "boost-asio",
     "nlohmann-json"
   ]

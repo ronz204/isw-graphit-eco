@@ -7,10 +7,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Crow CONFIG REQUIRED)
 find_package(nlohmann_json CONFIG REQUIRED)
 
+find_package(SQLite3 REQUIRED)
+find_package(SqliteOrm CONFIG REQUIRED)
+
 file(GLOB_RECURSE SOURCES "source/*.cpp")
 add_executable(happy-gr4 ${SOURCES})
 
-target_link_libraries(happy-gr4 PRIVATE Crow::Crow nlohmann_json::nlohmann_json)
+target_link_libraries(happy-gr4
+  PRIVATE
+  Crow::Crow
+  SQLite::SQLite3
+  sqlite_orm::sqlite_orm
+  nlohmann_json::nlohmann_json
+)
 
 if(WIN32)
   target_link_libraries(happy-gr4 PRIVATE ws2_32 mswsock)
