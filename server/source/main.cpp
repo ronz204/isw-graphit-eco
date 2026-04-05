@@ -1,8 +1,12 @@
 #include <crow.h>
+#include "database/ORM.h"
 #include <crow/middlewares/cors.h>
 
 int main()
 {
+  auto storage = initStorage("happy.db");
+  storage.sync_schema();
+
   crow::App<crow::CORSHandler> app;
 
   // Configure CORS middleware
