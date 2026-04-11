@@ -1,7 +1,7 @@
 import { HttpClient } from "./http.client";
 import { AuthInterceptor } from "./interceptors";
 import { BodyInterceptor } from "./interceptors";
-import type { HttpRequest } from "./http.models";
+import type { HttpConfig } from "./http.models";
 
 export class HttpFacade {
   private readonly api: HttpClient;
@@ -14,23 +14,23 @@ export class HttpFacade {
     });
   };
 
-  public get<T>(endpoint: string, config: HttpRequest = {}): Promise<T> {
+  public get<T>(endpoint: string, config: HttpConfig = {}): Promise<T> {
     return this.api.request<T>({ endpoint, method: "GET", config });
   };
 
-  public post<T>(endpoint: string, config: HttpRequest = {}): Promise<T> {
+  public post<T>(endpoint: string, config: HttpConfig = {}): Promise<T> {
     return this.api.request<T>({ endpoint, method: "POST", config });
   };
 
-  public put<T>(endpoint: string, config: HttpRequest = {}): Promise<T> {
+  public put<T>(endpoint: string, config: HttpConfig = {}): Promise<T> {
     return this.api.request<T>({ endpoint, method: "PUT", config });
   };
 
-  public patch<T>(endpoint: string, config: HttpRequest = {}): Promise<T> {
+  public patch<T>(endpoint: string, config: HttpConfig = {}): Promise<T> {
     return this.api.request<T>({ endpoint, method: "PATCH", config });
   };
 
-  public delete<T>(endpoint: string, config: HttpRequest = {}): Promise<T> {
+  public delete<T>(endpoint: string, config: HttpConfig = {}): Promise<T> {
     return this.api.request<T>({ endpoint, method: "DELETE", config });
   };
 };

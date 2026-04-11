@@ -1,19 +1,22 @@
 export type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
-export interface HttpRequest extends RequestInit{
+type Request = Omit<RequestInit, "method" | "body">;
+
+export interface HttpConfig extends Request{
   params?: Record<string, string | number>;
+  body?: Record<string, unknown> | object;
+};
+
+export interface HttpAction {
+  endpoint: string;
+  method: HttpMethod;
+  config: HttpConfig;
 };
 
 export interface HttpResponse<T> {
   data: T;
   status: number;
   headers: Headers;
-};
-
-export interface HttpAction {
-  endpoint: string;
-  method: HttpMethod;
-  config: HttpRequest;
 };
 
 type RequestReturn = RequestInit | Promise<RequestInit>;
