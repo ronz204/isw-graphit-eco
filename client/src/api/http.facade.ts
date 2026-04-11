@@ -1,5 +1,4 @@
 import { HttpClient } from "./http.client";
-import { AuthInterceptor } from "./interceptors";
 import { BodyInterceptor } from "./interceptors";
 import type { HttpConfig } from "./http.models";
 
@@ -10,7 +9,7 @@ export class HttpFacade {
     this.api = new HttpClient({
       url: import.meta.env.VITE_API_URL,
       headers: { "Content-Type": "application/json" },
-      interceptors: [AuthInterceptor, BodyInterceptor],
+      interceptors: [BodyInterceptor],
     });
   };
 
